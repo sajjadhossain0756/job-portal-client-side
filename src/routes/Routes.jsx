@@ -12,6 +12,7 @@ import PrivateRoute from './PrivateRoute'
 import MyBids from '../pages/MyBids'
 import BidRequests from '../pages/BidRequests'
 import AllJobs from '../pages/AllJobs'
+import JobApplay from '../components/JobApplay'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -39,6 +40,15 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <JobDetails />
+          </PrivateRoute>
+        ),
+        loader: ({params}) => fetch(`http://localhost:4000/jobs/${params.id}`)
+      },
+      {
+        path: '/job-applay/:id',
+        element: (
+          <PrivateRoute>
+            <JobApplay />
           </PrivateRoute>
         ),
         loader: ({params}) => fetch(`http://localhost:4000/jobs/${params.id}`)

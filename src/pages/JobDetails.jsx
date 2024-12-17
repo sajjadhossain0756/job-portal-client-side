@@ -2,14 +2,14 @@ import { useContext, useState } from 'react'
 
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-import { useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../providers/AuthProvider'
 
 const JobDetails = () => {
   const [startDate, setStartDate] = useState(new Date())
   const {user} = useContext(AuthContext)
   const loaderData = useLoaderData()
-  const { title, company,category,applicationDeadline, company_logo,location,description,salaryRange } = loaderData || {};
+  const {_id, title, company,category,applicationDeadline, company_logo,location,description,salaryRange } = loaderData || {};
   console.log(loaderData)
 
   return (
@@ -56,6 +56,7 @@ const JobDetails = () => {
              <p>Salary: {salaryRange?.min} - {salaryRange?.max} {salaryRange?.currency}</p>
           </p>
         </div>
+        <Link to={`/job-applay/${_id}`}><button className='btn bg-purple-800 my-4'>Apply Now</button></Link>
       </div>
       {/* Place A Bid Form */}
       {/* <section className='p-6 w-full  bg-white rounded-md shadow-md flex-1 md:min-h-[350px]'>
