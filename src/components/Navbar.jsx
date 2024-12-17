@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import logo from '../assets/images/logo.png'
 import { AuthContext } from '../providers/AuthProvider'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext)
   return (
@@ -15,10 +15,13 @@ const Navbar = () => {
       <div className='flex-none'>
         <ul className='menu menu-horizontal px-1'>
           <li>
-            <Link to='/'>Home</Link>
+            <NavLink to='/'>Home</NavLink>
           </li>
           <li>
-            <Link to='/jobs'>All Jobs</Link>
+            <NavLink to='/my-application'>My Application</NavLink>
+          </li>
+          <li>
+            <NavLink to='/jobs'>All Jobs</NavLink>
           </li>
 
           {!user && (
