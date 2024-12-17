@@ -1,38 +1,40 @@
 /* eslint-disable react/prop-types */
 
-import { Link } from 'react-router-dom'
+import { FaLocationDot } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
-const JobCard = () => {
+const JobCard = ({ job }) => {
+  console.log(job?.requirements)
+  const { _id,title, company,applicationDeadline, company_logo,location,description,salaryRange } = job || {};
   return (
-    <Link
-      to={`/job/1`}
-      className='w-full max-w-sm px-4 py-3 bg-white rounded-md shadow-md hover:scale-[1.05] transition-all'
-    >
-      <div className='flex items-center justify-between'>
-        <span className='text-xs font-light text-gray-800 '>
-          Deadline: 28/05/2024
-        </span>
-        <span className='px-3 py-1 text-[8px] text-blue-800 uppercase bg-blue-200 rounded-full '>
-          Web Development
-        </span>
+    <div className="card card-compact p-4 shadow-xl border-2 border-white">
+      <div className="flex items-center gap-4">
+        <figure>
+          <img
+            src={company_logo}
+            className="w-16 h-16"
+            alt="Shoes" />
+        </figure>
+        <div>
+            <h4>{company}</h4>
+            <p className="flex items-center gap-1"><FaLocationDot></FaLocationDot>{location}</p>
+        </div>
       </div>
-
-      <div>
-        <h1 className='mt-2 text-lg font-semibold text-gray-800 '>
-          E-commerce Website Development
-        </h1>
-
-        <p className='mt-2 text-sm text-gray-600 '>
-          Dramatically redefine bleeding-edge infrastructures after
-          client-focused value. Intrinsicly seize user-centric partnerships
-          through out-of-the-box architectures. Distinctively.
-        </p>
-        <p className='mt-2 text-sm font-bold text-gray-600 '>
-          Range: $500 - $600
-        </p>
-        <p className='mt-2 text-sm font-bold text-gray-600 '>Total Bids: 0</p>
+      <div className="card-body">
+        <h2 className="card-title">{title}
+        <div className="badge badge-secondary">NEW</div>
+        </h2>
+        <p className="pt-2">{description && description.substring(0, 80)}</p>
+        <div className="flex gap-2 flex-wrap">
+          {job?.requirements.map(skill => <p className="bg-gray-600 rounded p-2">{skill}</p>)}
+        </div>
+        <p>Salary: {salaryRange?.min} - {salaryRange?.max} {salaryRange?.currency}</p>
+        <p>Deadline: {applicationDeadline}</p>
+        <div className="card-actions justify-start pt-4">
+          <Link to={`jobs-detail/${_id}`}><button className="btn btn-primary">Apply Now</button></Link>
+        </div>
       </div>
-    </Link>
+    </div>
   )
 }
 
