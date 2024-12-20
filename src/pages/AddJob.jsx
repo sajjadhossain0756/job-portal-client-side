@@ -44,8 +44,8 @@ const AddJob = () => {
 
   return (
     <div className='flex justify-center items-center  min-h-[calc(100vh-306px)] my-12'>
-      <section className=' p-2 md:p-6 mx-auto w-[850px] bg-white rounded-md shadow-md '>
-        <h2 className='text-4xl text-center font-semibold text-gray-700 capitalize '>
+      <section className=' p-2 md:p-6 mx-auto w-[850px] bg-gray-600 text-white rounded-md shadow-md '>
+        <h2 className='text-4xl text-center font-bold text-white  capitalize '>
           Post a New Job
         </h2>
 
@@ -53,7 +53,7 @@ const AddJob = () => {
           <div className='grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2'>
             {/* job title */}
             <div>
-              <label className='text-gray-700 ' htmlFor='job_title'>
+              <label className='text-white ' htmlFor='job_title'>
                 Job Title
               </label>
               <input
@@ -66,7 +66,7 @@ const AddJob = () => {
             </div>
             {/* job location */}
             <div>
-              <label className='text-gray-700 ' htmlFor='emailAddress'>
+              <label className='text-white ' htmlFor='emailAddress'>
                 Job Location
               </label>
               <input
@@ -79,7 +79,7 @@ const AddJob = () => {
             </div>
             {/* deadline */}
             <div className='flex flex-col gap-2 '>
-              <label className='text-gray-700'>Deadline</label>
+              <label className='text-white'>Deadline</label>
 
               {/* Date Picker Input Field */}
               <DatePicker
@@ -91,7 +91,7 @@ const AddJob = () => {
             </div>
             {/* category */}
             <div className='flex flex-col gap-2 '>
-              <label className='text-gray-700 ' htmlFor='category'>
+              <label className='text-white ' htmlFor='category'>
                 Category
               </label>
               <select
@@ -105,22 +105,22 @@ const AddJob = () => {
               </select>
             </div>
             {/* job type */}
-            <select name='jobType' className="select bg-white text-gray-800 select-bordered w-full max-w-xs">
-              <option disabled selected>Job Type</option>
+            <select defaultValue='job type' name='jobType' className="select bg-white text-gray-800 select-bordered w-full max-w-xs">
+              <option disabled >Job Type</option>
               <option value='Part Time'>Part Time</option>
               <option value='Full Time'>Full Time</option>
               <option value='Contract'>Contract</option>
             </select>
             {/* company name */}
-            <select name='company' className="select bg-white text-gray-800 select-bordered w-full max-w-xs">
-              <option disabled selected>Company</option>
+            <select defaultValue='company Name' name='company' className="select bg-white text-gray-800 select-bordered w-full max-w-xs">
+              <option disabled >Company</option>
               <option>Google</option>
               <option>Amazon</option>
               <option>Facebook</option>
             </select>
             {/* hr email */}
             <div>
-              <label className='text-gray-700 ' htmlFor='emailAddress'>
+              <label className='text-white ' htmlFor='emailAddress'>
                 HR Email
               </label>
               <input
@@ -133,7 +133,7 @@ const AddJob = () => {
             </div>
             {/* hr name */}
             <div>
-              <label className='text-gray-700 ' htmlFor='emailAddress'>
+              <label className='text-white ' htmlFor='emailAddress'>
                 HR Name
               </label>
               <input
@@ -146,7 +146,7 @@ const AddJob = () => {
             </div>
             {/* company logo */}
             <div>
-              <label className='text-gray-700 ' htmlFor='emailAddress'>
+              <label className='text-white ' htmlFor='emailAddress'>
                 Company Logo
               </label>
               <input
@@ -159,7 +159,7 @@ const AddJob = () => {
             </div>
             {/* status */}
             <div>
-              <label className='text-gray-700 ' htmlFor='emailAddress'>
+              <label className='text-white ' htmlFor='emailAddress'>
                 Status
               </label>
               <input
@@ -175,7 +175,7 @@ const AddJob = () => {
           {/* salary range */}
           <div className='flex pt-4 items-end gap-4'>
             <div>
-              <label className='text-gray-700 ' htmlFor='min_price'>
+              <label className='text-white ' htmlFor='min_price'>
                 Salary Range
               </label>
               <input
@@ -197,8 +197,8 @@ const AddJob = () => {
               />
             </div>
             {/* currency */}
-            <select name='currency' className="select bg-white text-gray-800 select-bordered w-full max-w-xs">
-              <option disabled selected>Currency</option>
+            <select defaultValue='currency' name='currency' className="select bg-white text-gray-800 select-bordered w-full max-w-xs">
+              <option disabled>Currency</option>
               <option value='USD'>USD</option>
               <option value='Euro'>Euro</option>
               <option value='BDT'>BDT</option>
@@ -206,7 +206,7 @@ const AddJob = () => {
           </div>
           {/* requirements */}
           <div className='flex flex-col gap-2 mt-4'>
-            <label className='text-gray-700 ' htmlFor='description'>
+            <label className='text-white ' htmlFor='description'>
               Requirements
             </label>
             <textarea
@@ -218,7 +218,7 @@ const AddJob = () => {
           </div>
           {/* responsibilities */}
           <div className='flex flex-col gap-2 mt-4'>
-            <label className='text-gray-700 ' htmlFor='description'>
+            <label className='text-white ' htmlFor='description'>
               Responsibilities
             </label>
             <textarea
@@ -230,7 +230,7 @@ const AddJob = () => {
           </div>
           {/* description */}
           <div className='flex flex-col gap-2 mt-4'>
-            <label className='text-gray-700 ' htmlFor='description'>
+            <label className='text-white ' htmlFor='description'>
               Description
             </label>
             <textarea
