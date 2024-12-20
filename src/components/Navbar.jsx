@@ -21,6 +21,9 @@ const Navbar = () => {
             <NavLink to='/my-application'>My Application</NavLink>
           </li>
           <li>
+            <NavLink to='/add-job'>Add Job</NavLink>
+          </li>
+          <li>
             <NavLink to='/jobs'>All Jobs</NavLink>
           </li>
 
